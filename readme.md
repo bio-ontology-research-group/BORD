@@ -4,7 +4,9 @@
 1. First create a virtual environment in your working directory called venv
 2. Activate the virtual env
 3. Install requirements with
+```
 pip3 install -r requirements.txt
+```
 4. Install apex as follows:
 git clone https://github.com/NVIDIA/apex
 cd apex
