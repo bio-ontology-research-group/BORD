@@ -23,18 +23,18 @@ Example:
 ```
 ./lexical_annot.sh ont.obo sample.input.txt weak_output.txt
 ```
-2- Run the same command on a different corpus to create the development set
-3-You will need to extract children and parents to use the ontology-based normalization, please refer to the following script for reference:
+2. Run the same command on a different corpus to create the development set
+3. You will need to extract children and parents to use the ontology-based normalization, please refer to the following script for reference:
 https://github.com/smalghamdi/groovyScripts/blob/master/direct_parent_direct_child.groovy
 the output should be two files in json format
-4-For ontology-based normalization you will also need to run the following script:
+4. For ontology-based normalization you will also need to run the following script:
 ```
 get_IC_allchildren.py direct_children.json
 ```
 where the input is the direct_children json file
 
 ## Training
-1-Run the train.sh script
+1. Run the train.sh script
 it requires the output from the previous step which can be run twice to create training and development sets
 For the sake of the example we use the file twice 
 ```
