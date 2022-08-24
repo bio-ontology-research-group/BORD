@@ -1,15 +1,15 @@
 # BORD
 ***
 ## Preparation
-1- First create a virtual environment in your working directory called venv
-2- Activate the virtual env
-3- Install requirements with
+1. First create a virtual environment in your working directory called venv
+2. Activate the virtual env
+3. Install requirements with
 pip3 install -r requirements.txt
-4- Install apex as follows:
+4. Install apex as follows:
 git clone https://github.com/NVIDIA/apex
 cd apex
 pip install -v --disable-pip-version-check --no-cache-dir ./
-5- Download the spacy english model
+5. Download the spacy english model
 python3 -m spacy download en_core_web_sm
 
 ## Lexical annotation for distant supervision
