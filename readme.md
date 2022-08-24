@@ -8,9 +8,11 @@
 pip3 install -r requirements.txt
 ```
 4. Install apex as follows:
+```
 git clone https://github.com/NVIDIA/apex
 cd apex
 pip install -v --disable-pip-version-check --no-cache-dir ./
+```
 5. Download the spacy english model
 python3 -m spacy download en_core_web_sm
 
