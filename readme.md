@@ -25,6 +25,7 @@ python3 -m spacy download en_core_web_sm
  - The ontology in obo format
  - The corpus that you want to annotate in pubtator format to create the weakly labeled dataset for training
  - The output file name
+
 Example:
 ```
 ./lexical_annot.sh ont.obo sample.input.txt weak_output.txt
@@ -41,7 +42,9 @@ where the input is the direct_children json file
 
 ## Training
 1. Run the train.sh script
+
 it requires the output from the previous step which can be run twice to create training and development sets
+
 For the sake of the example we use the file twice 
 ```
 ./train.sh weak_output.txt weak_output.txt 
