@@ -43,7 +43,7 @@ where the input is the direct_children json file
 ## Training
 1. Run the train.sh script
 
-it requires the output from the previous step which can be run twice to create training and development sets
+it requires the output from the previous step which can be run twice: The first one to create training and another to create the development sets
 
 For the sake of the example we use the file twice 
 ```
@@ -59,8 +59,11 @@ Alternatively, you can use our sample files as follows:
 where the input is as follows in order:
 - The pubtator file for which you want to predict
 - The output file which will be stored under the output directory
+
 To run the ontology-based normalization:
+
 Replace the script name 'normalize.py' in the last line in predict.sh to 'normalize_ontology-based.py' 
+
 Example: 
 ```
 ./predict.sh sample.input.txt final_output.txt
