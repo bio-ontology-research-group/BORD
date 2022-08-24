@@ -46,6 +46,7 @@ To run the ontology-based normalization:
 Replace the script name 'normalize.py' in the last line in predict.sh to 'normalize_ontology-based.py' 
 
 ***
+## Trained models
 To use our trained model, download it from:
 AND unzip it in the model/ directory
 
