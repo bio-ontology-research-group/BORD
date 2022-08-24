@@ -14,7 +14,7 @@ lemmatizer = WordNetLemmatizer()
 #Please choose your thresholds for prediction here
 #token_matching_ratio=0.8
 #candidate_matching_ratio=0.8
-tmr=0.7
+mmr=0.7
 cmr=0.8
 
 exact_dic=pickle.load(open('ifiles/exact_dic.pkl','rb'))
@@ -27,7 +27,7 @@ def prediction_routine(p):
 		p[1]=['FP']
 		return [p]
 	p[0]=re.sub(' +',' ',p[0].lower().replace("'s","").translate(str.maketrans(string.punctuation, ' '*len(string.punctuation)))).strip()
-	global clf, exact_dic, tmr, cmr
+	global clf, exact_dic, mmr, cmr
 	ppairs = []
 	predicted=[]
 	candidates=candidates_dic(p[0])
@@ -45,7 +45,7 @@ def prediction_routine(p):
 			ms, ds, os, os2, rem_words = rbm(deepcopy(p[0].split()),deepcopy(cand[1]))
 			if os2<1 or os<1:
 				continue
-			if ms/os>tmr and ms/os2>cmr:
+			if ms/os>mmr and ms/os2>cmr:
 				pool.append([cand[0],ms/os,ms/os2])
 			elif ms/os2 > 0.97 and IC[cand[0]]<3 and ms/os<0.8:
 				guides.append([cand[0], ' '.join(rem_words),ms,os,os2])
@@ -60,7 +60,7 @@ def prediction_routine(p):
 						ms, _, os, os2, _ = rbm(deepcopy(g[1].split()),deepcopy(cand[1]))
 						if os<1 or os2<1:
 							continue
-						if (ms/os)<tmr or (ms/os2)<0.3:
+						if (ms/os)<mmr or (ms/os2)<0.3:
 							continue
 						score=(ms/os)+(ms/os2)
 						if score > max_score or score==max_score:
@@ -84,11 +84,13 @@ def prediction_routine(p):
 
 def predict_parallel( of, pred_f, abb_f, pub_f):
 	pairs, abs_dic = get_pred(pred_f, abb_f, pub_f)
+	everything, ppairs=[], []
 	with Pool() as p:
 		everything=p.map(prediction_routine, pairs)
-	ppairs=everything[0]
-	for i in everything[1:]:
-		ppairs+=i
+	if len(everything)>0:
+		ppairs=everything[0]
+		for i in everything[1:]:
+			ppairs+=i
 	write_pubtator(abs_dic, ppairs, of)
 	
 	

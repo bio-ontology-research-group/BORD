@@ -11,7 +11,7 @@ cuda_available = torch.cuda.is_available()
 columns = ['sentence_id', 'words','labels']
 test_df = pd.DataFrame(columns=columns)
 
-model= NERModel('bert', './mm_model/')
+model= NERModel('bert', './model/')
 
 sent_id=1
 sent=""

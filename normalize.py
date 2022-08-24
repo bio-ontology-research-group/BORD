@@ -58,11 +58,13 @@ def prediction_routine(p):
 
 def predict_parallel( of, pred_f, abb_f, pub_f):
 	pairs, abs_dic = get_pred(pred_f, abb_f, pub_f)
+	everything,ppairs=[],[]
 	with Pool() as p:
 		everything=p.map(prediction_routine, pairs)
-	ppairs=everything[0]
-	for i in everything[1:]:
-		ppairs+=i
+	if len(everything)>0:
+		ppairs=everything[0]
+		for i in everything[1:]:
+			ppairs+=i
 	write_pubtator(abs_dic, ppairs, of)
 	
 if __name__=="__main__":
