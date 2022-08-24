@@ -1,5 +1,6 @@
 # BORD
-Preparation
+***
+## Preparation
 1- First create a virtual environment in your working directory called venv
 2- Activate the virtual env
 3- Install requirements with
