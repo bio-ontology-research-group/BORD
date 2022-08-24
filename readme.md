@@ -12,7 +12,7 @@ pip install -v --disable-pip-version-check --no-cache-dir ./
 5- Download the spacy english model
 python3 -m spacy download en_core_web_sm
 
-Lexical annotation for distant supervision
+## Lexical annotation for distant supervision
 1- Create the training dataset by lexically annotating a corpus provided in pubtator format
 run lexical_annot.sh 
 it requires the following arguments in order:
@@ -29,7 +29,7 @@ the output should be two files in json format
 get_IC_allchildren.py direct_children.json
 where the input is the direct_children json file
 
-Training
+## Training
 1-Run the train.sh script
 it requires the output from the previous step which can be run twice to create training and development sets
 For the sake of the example we use the file twice 
@@ -37,7 +37,7 @@ For the sake of the example we use the file twice
 Alternatively, you can use our sample files as follows:
 ./train.sh ../sample.input.4train.iob ../sample.dev.iob
 
-Prediction
+## Prediction
 1- Run the predict.sh script
 where the input is as follows in order:
 - The pubtator file for which you want to predict
@@ -45,8 +45,7 @@ where the input is as follows in order:
 To run the ontology-based normalization:
 Replace the script name 'normalize.py' in the last line in predict.sh to 'normalize_ontology-based.py' 
 
-----------------------------------------------
-
+***
 To use our trained model, download it from:
 AND unzip it in the model/ directory
 
