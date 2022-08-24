@@ -21,12 +21,12 @@ python3 -m spacy download en_core_web_sm
 ## Lexical annotation for distant supervision
 1. Create the training dataset by lexically annotating a corpus provided in pubtator format:
 
- run lexical_annot.sh 
+    run lexical_annot.sh 
  
  it requires the following arguments in order:
- - [The ontology in obo format]
- - [The corpus that you want to annotate in pubtator format to create the weakly labeled dataset for training]
- - [The output file name]
+ - The ontology in obo format
+ - The corpus that you want to annotate in pubtator format to create the weakly labeled dataset for training
+ - The output file name
 Example:
 ```
 ./lexical_annot.sh ont.obo sample.input.txt weak_output.txt
