@@ -43,9 +43,9 @@ where the input is the direct_children json file
 ## Training
 1. Run the train.sh script
 
-it requires the output from the previous step which can be run twice: The first one to create training and another to create the development sets
+it requires the output from the previous step which can be run twice: The first one to create training set and another one to create the development set
 
-For the sake of the example we use the file twice 
+For the sake of the example we use the same file twice:
 ```
 ./train.sh weak_output.txt weak_output.txt 
 ```
