@@ -1,8 +1,0 @@
-torch==1.7.1
-simpletransformers==0.43.6
-pandas
-tqdm==4.47.0
-nltk==3.5
-spacy==3.0.1
-scispacy==0.4.0
-inflect
