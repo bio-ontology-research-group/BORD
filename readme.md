@@ -14,7 +14,9 @@ cd apex
 pip install -v --disable-pip-version-check --no-cache-dir ./
 ```
 5. Download the spacy english model
+```
 python3 -m spacy download en_core_web_sm
+```
 
 ## Lexical annotation for distant supervision
 1. Create the training dataset by lexically annotating a corpus provided in pubtator format
