@@ -72,11 +72,11 @@ Example:
 ***
 ## Trained models
 To use our trained models, download it from:
-- [Phenotype] (https://bio2vec.cbrc.kaust.edu.sa/data/BORD/phenotype_model.zip)
-- [Disease] (https://bio2vec.cbrc.kaust.edu.sa/data/BORD/disease_model.zip)
+- [Phenotype](https://bio2vec.cbrc.kaust.edu.sa/data/BORD/phenotype_model.zip)
+- [Disease](https://bio2vec.cbrc.kaust.edu.sa/data/BORD/disease_model.zip)
 AND unzip it in the model/ directory
 AND download the intermediate files from:
-- [Phenotype] (https://bio2vec.cbrc.kaust.edu.sa/data/BORD/hpo_ifiles.zip)
-- [Disease] (https://bio2vec.cbrc.kaust.edu.sa/data/BORD/ctd_ifiles.zip)
+- [Phenotype](https://bio2vec.cbrc.kaust.edu.sa/data/BORD/hpo_ifiles.zip)
+- [Disease](https://bio2vec.cbrc.kaust.edu.sa/data/BORD/ctd_ifiles.zip)
 AND unzip it in the ifiles/ directory
 
