@@ -80,5 +80,6 @@ AND unzip it in the model/ directory
 2. Download the intermediate files from:
 - [Phenotype](https://bio2vec.cbrc.kaust.edu.sa/data/BORD/hpo_ifiles.zip)
 - [Disease](https://bio2vec.cbrc.kaust.edu.sa/data/BORD/ctd_ifiles.zip)
+
 AND unzip it in the ifiles/ directory
 
