@@ -76,10 +76,14 @@ def get_pred(pred_file, abbr_file, original_pubtator):
 			current_idxi = current_abs.find(ptoken[0])
 			if current_idxi>-1:
 				current_idx=current_idxi
+			else:
+				continue
 		else:
 			current_idxi = current_abs.find(ptoken[0], current_idx)
 			if current_idxi>-1:
 				current_idx=current_idxi
+			else:
+				continue
 		pred_label = ptoken[1].rstrip()
 		if current_id in abbr_dic and ptoken[0] in abbr_dic[current_id]:
 			pass
