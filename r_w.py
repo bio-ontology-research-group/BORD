@@ -73,9 +73,13 @@ def get_pred(pred_file, abbr_file, original_pubtator):
 			continue
 		ptoken = pline.split('\t')
 		if current_idx == 0:
-			current_idx = current_abs.find(ptoken[0])
+			current_idxi = current_abs.find(ptoken[0])
+			if current_idxi>-1:
+				current_idx=current_idxi
 		else:
-			current_idx = current_abs.find(ptoken[0], current_idx)
+			current_idxi = current_abs.find(ptoken[0], current_idx)
+			if current_idxi>-1:
+				current_idx=current_idxi
 		pred_label = ptoken[1].rstrip()
 		if current_id in abbr_dic and ptoken[0] in abbr_dic[current_id]:
 			pass
@@ -83,7 +87,7 @@ def get_pred(pred_file, abbr_file, original_pubtator):
 			pcurrent[0]+=' '+ptoken[0]
 			pcurrent[2][1]=current_idx+len(ptoken[0])
 		elif pred_label=='B':
-			pcurrent=['',['garbage'],[-1,-1],current_id]
+			pcurrent=['',['UNASSIGNED'],[-1,-1],current_id]
 			pcurrent[0]=ptoken[0]
 			pcurrent[2][0]=current_idx
 			pcurrent[2][1]=current_idx+len(ptoken[0])
@@ -91,7 +95,7 @@ def get_pred(pred_file, abbr_file, original_pubtator):
 			pairs.append(pcurrent)
 			pcurrent=[]
 		if current_id in abbr_dic and pred_label=='B' and ptoken[0] in abbr_dic[current_id]:
-			pairs.append([abbr_dic[current_id][ptoken[0]].replace('-',' - '),['garbage'],[current_idx,current_idx+len(ptoken[0])],current_id])
+			pairs.append([abbr_dic[current_id][ptoken[0]].replace('-',' - '),['UNASSINGED'],[current_idx,current_idx+len(ptoken[0])],current_id])
 	return pairs, abst_dic
 if __name__=='__main__':
 	pairs, abst_dic=get_pred('predictions.medmentions.74K.txt','u.abbr.list.mm.test.txt','pubtator.txt')
