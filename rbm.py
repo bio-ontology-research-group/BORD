@@ -17,7 +17,6 @@ stop_words['"']=True
 del(stop_words['as'])
 
 lemmatizer = WordNetLemmatizer()
-wordIC=pickle.load(open('ifiles/wordIC_dic.pkl','rb'))
 wdic=pickle.load(open('ifiles/words_dic.pkl','rb'))
 tdic=pickle.load(open('ifiles/tokens_dic.pkl','rb'))
 
@@ -34,12 +33,12 @@ def get_wordnet_pos(treebank_tag):
         return wordnet.NOUN
 
 
-def rbm(set1,set2,threshold=0.5):
-	threshold=0.3 #Threshold for allowed difference in edit distance, the lower the stricter, you can set this for yourself
+def rbm(set1,set2,threshold=0.3):
+	#threshold=0.3 #Threshold for allowed difference in edit distance, the lower the stricter, you can set this for yourself
 	matching_score=0
 	diff_score=0
-	set1=[x for x in set1 if x not in stop_words and ( x not in wordIC or wordIC[x]>2.5)]
-	set2=[x for x in set2 if x not in stop_words and ( x not in wordIC or wordIC[x]>2.5)]
+	set1=[x for x in set1 if x not in stop_words]
+	set2=[x for x in set2 if x not in stop_words]
 	original_size=len(set1)
 	original_size2=len(set2)
 	if original_size==0 or original_size2==9:
