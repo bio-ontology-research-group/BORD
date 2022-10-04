@@ -36,7 +36,7 @@ https://github.com/smalghamdi/groovyScripts/blob/master/direct_parent_direct_chi
 the output should be two files in json format
 4. For ontology-based normalization you will also need to run the following script:
 ```
-python3 get_IC_allchildren.py direct_children.json
+python3 get_allchildren.py direct_children.json
 ```
 where the input is the direct_children json file
 
