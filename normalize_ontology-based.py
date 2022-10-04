@@ -18,7 +18,6 @@ mmr=0.7
 cmr=0.8
 
 exact_dic=pickle.load(open('ifiles/exact_dic.pkl','rb'))
-IC=pickle.load(open('ifiles/struct_IC.pkl','rb'))
 children=pickle.load(open('ifiles/all_children.pkl','rb'))
 
 
