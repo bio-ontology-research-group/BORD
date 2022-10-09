@@ -59,7 +59,7 @@ def prediction_routine(p):
 						ms, _, os, os2, _ = rbm(deepcopy(g[1].split()),deepcopy(cand[1]))
 						if os<1 or os2<1:
 							continue
-						if (ms/os)<mmr or (ms/os2)<0.3:
+						if (ms/os)<mmr or (ms/os2)<cmr:
 							continue
 						score=(ms/os)+(ms/os2)
 						if score > max_score or score==max_score:
