@@ -46,7 +46,7 @@ def prediction_routine(p):
 				continue
 			if ms/os>mmr and ms/os2>cmr:
 				pool.append([cand[0],ms/os,ms/os2])
-			elif ms/os2 > 0.97 and ms/os<0.8:
+			elif ms/os2 > 0.99 and ms/os<mmr and (cand[0] not in children or len(children[cand[0]])>1) :
 				guides.append([cand[0], ' '.join(rem_words),ms,os,os2])
 				
 		if len(guides)>0 and len(pool)<1:
