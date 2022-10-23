@@ -3,13 +3,11 @@ from scipy.special import softmax
 import torch
 import re
 import numpy as np
-import pandas as pd
 import sys
 
 cuda_available = torch.cuda.is_available()
 
 columns = ['sentence_id', 'words','labels']
-test_df = pd.DataFrame(columns=columns)
 
 model= NERModel('bert', './model/')
 
@@ -24,7 +22,6 @@ with open(string,'r') as f:
      if (line!="\n"):
        line=line.strip()
        words=line
-       test_df = test_df.append({'sentence_id': sent_id, 'words': words}, ignore_index=True)
        sent=sent + words + " "
      else:
        sent_id=sent_id+1
