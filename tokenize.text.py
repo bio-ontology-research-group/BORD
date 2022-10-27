@@ -26,7 +26,7 @@ def readfile(fname):
      
 
 def tokenize_text(cn,pmid):
-   res="PMID:"+pmid
+   res="PMID="+pmid
    #print (res + "  from function")
    cnt=0    
    sentlist=sent_tokenize(data[pmid])
