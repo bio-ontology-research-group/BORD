@@ -22,9 +22,8 @@ children=pickle.load(open('ifiles/all_children.pkl','rb'))
 
 
 def prediction_routine(p):
-	if p[0].isupper():
-		p[1]=['FP']
-		return [p]
+	if p[0].isupper() or len(p[0])<2:
+		return []
 	p[0]=re.sub(' +',' ',p[0].lower().replace("'s","").translate(str.maketrans(string.punctuation, ' '*len(string.punctuation)))).strip()
 	global clf, exact_dic, mmr, cmr
 	ppairs = []
