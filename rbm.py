@@ -15,6 +15,9 @@ stop_words['(']=True
 stop_words[')']=True
 stop_words['"']=True
 del(stop_words['as'])
+letters=[x for x in stop_words if len(x)<2]
+for l in letters:
+    del(stop_words[l])
 
 lemmatizer = WordNetLemmatizer()
 wdic=pickle.load(open('ifiles/words_dic.pkl','rb'))
