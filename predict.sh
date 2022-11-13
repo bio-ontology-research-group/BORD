@@ -9,4 +9,4 @@ rm $1.tok
 rm $1.tmp
 less abbrlist.txt | sort | uniq >tmp.txt
 mv tmp.txt output/abbrlist.txt
-python normalize.py output/NER_raw_predictions.iob output/abbrlist.txt $1 output/$2 
+python normalize_ontology-based.py output/NER_raw_predictions.iob output/abbrlist.txt $1 output/$2 
