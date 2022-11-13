@@ -32,8 +32,11 @@ def prediction_routine(p):
 	token_pos=nltk.pos_tag(p[0].split(' '))
 	lemmas=' '.join([lemmatizer.lemmatize(token[0], get_wordnet_pos(token[1])) for token in token_pos])
 	if p[0] in exact_dic:
+		temp=[]
 		for c in exact_dic[p[0].lower()]:
-			predicted.append(c)
+			temp.append(c)
+		if len(temp)>0:
+			predicted.append('||'.join(temp))
 	elif lemmas in exact_dic:
 		for c in exact_dic[lemmas]:
 			predicted.append(c)
