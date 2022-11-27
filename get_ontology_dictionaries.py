@@ -50,6 +50,8 @@ def build_dict(filename):
             elif 'name:' in line:
                 name=line[len('name: '):].lower().replace("'s","")
                 name=re.sub(' +',' ',name.translate(str.maketrans(string.punctuation, ' '*len(string.punctuation)))).strip()
+		if name in stop_words:
+			continue
                 tokens = word_tokenize(name)
                 token_pos = nltk.pos_tag(tokens)
                 lemmas = [lemmatizer.lemmatize(token[0], get_pos(token[1])) for token in token_pos]    
@@ -66,6 +68,8 @@ def build_dict(filename):
                 eid=line.find('" ')
                 name=line[len('synonym: "'):eid].lower().replace("'s","")
                 name=re.sub(' +',' ',name.translate(str.maketrans(string.punctuation, ' '*len(string.punctuation)))).strip()
+		if name in stop_words:
+			continue
                 if len(name)<2 and name.lower() not in stopwords:
                     pass
                 else:
