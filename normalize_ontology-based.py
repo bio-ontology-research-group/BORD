@@ -12,9 +12,7 @@ global clf, exact_dic, tmr, cmr
 lemmatizer = WordNetLemmatizer()
 
 #Please choose your thresholds for prediction here
-#token_matching_ratio=0.8
-#candidate_matching_ratio=0.8
-mmr=0.7
+mmr=0.8
 cmr=0.8
 
 exact_dic=pickle.load(open('ifiles/exact_dic.pkl','rb'))
