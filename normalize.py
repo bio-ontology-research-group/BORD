@@ -17,7 +17,7 @@ for p in string.punctuation:
 lemmatizer = WordNetLemmatizer()
 
 #Please choose your thresholds for prediction here
-tmr=0.7 #Token Matching Ratio
+tmr=0.8 #Token Matching Ratio
 cmr=0.8 #Candidate Matching Ratio
 exact_dic=pickle.load(open('ifiles/exact_dic.pkl','rb'))
 
